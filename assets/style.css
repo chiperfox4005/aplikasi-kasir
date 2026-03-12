@@ -1,0 +1,523 @@
+/* ========================================
+DASHBOARD + DATABASE + MANAJEMEN + KEUANGAN
+STYLE RETAIL PROFESIONAL
+WARNA : MERAH - COKLAT - HIJAU
+======================================== */
+
+:root{
+
+/* WARNA UTAMA RETAIL */
+--primary:#c62828;
+--primary-dark:#8e1c1c;
+
+--success:#2e7d32;
+--warning:#f57c00;
+--danger:#b71c1c;
+
+--brown:#6d4c41;
+
+/* GRAY */
+--gray-50:#fafafa;
+--gray-100:#f5f5f5;
+--gray-200:#e5e7eb;
+--gray-600:#4b5563;
+--gray-800:#1f2937;
+
+--shadow:0 4px 6px rgba(0,0,0,0.08);
+--shadow-lg:0 20px 25px rgba(0,0,0,0.08);
+
+--max-width:1400px;
+--sidebar-width:280px;
+}
+
+/* ========================================
+BASE RESET
+======================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+
+background:linear-gradient(
+120deg,
+#2fbf8f,
+#6ed6a3,
+#ccefdc
+);
+
+min-height:100vh;
+color:#1f2937;
+overflow-x:hidden;
+}
+
+/* ========================================
+SIDEBAR
+======================================== */
+
+.sidebar{
+width:var(--sidebar-width);
+height:100vh;
+background:#ffffff;
+border-right:2px solid #eee;
+position:fixed;
+left:0;
+top:0;
+padding:2.5rem 0;
+box-shadow:2px 0 12px rgba(0,0,0,0.05);
+}
+
+.sidebar-header{
+padding:0 2rem 2rem;
+text-align:center;
+border-bottom:1px solid var(--gray-200);
+margin-bottom:2rem;
+}
+
+.sidebar-header h2{
+font-size:1.3rem;
+font-weight:700;
+color:var(--primary);
+}
+
+.sidebar-nav{
+padding:0 1rem;
+}
+
+.nav-item{
+width:100%;
+padding:1rem 1.5rem;
+border:none;
+background:none;
+border-radius:10px;
+font-size:0.95rem;
+font-weight:500;
+color:var(--gray-600);
+display:flex;
+align-items:center;
+gap:1rem;
+margin-bottom:6px;
+cursor:pointer;
+transition:0.25s;
+}
+
+.nav-item:hover{
+background:#f9f9f9;
+color:var(--brown);
+transform:translateX(3px);
+}
+
+.nav-item.active{
+background:var(--primary);
+color:#fff;
+}
+
+/* ========================================
+MAIN CONTENT
+======================================== */
+
+.main{
+margin-left:var(--sidebar-width);
+max-width:calc(var(--max-width) + var(--sidebar-width));
+margin-right:auto;
+padding:3rem;
+min-height:100vh;
+}
+
+.main-container{
+max-width:var(--max-width);
+margin:0 auto;
+}
+
+/* ========================================
+WELCOME DASHBOARD
+======================================== */
+
+.welcome-section{
+margin-bottom:3rem;
+text-align:center;
+color:var(--gray-800);
+padding:2.5rem;
+background:#ffffff;
+border-radius:20px;
+box-shadow:var(--shadow);
+border:1px solid var(--gray-200);
+}
+
+.welcome-section h1{
+font-size:2.6rem;
+font-weight:800;
+color:var(--primary);
+}
+
+/* ========================================
+STATS GRID
+======================================== */
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:1.5rem;
+margin-bottom:3rem;
+}
+
+.stat-card{
+background:#ffffff;
+border-radius:16px;
+padding:2rem;
+box-shadow:var(--shadow);
+border:1px solid var(--gray-200);
+display:flex;
+align-items:center;
+height:130px;
+transition:0.25s;
+}
+
+.stat-card:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow-lg);
+}
+
+.stat-card.primary .stat-icon{
+background:#fdecea;
+color:var(--primary);
+}
+
+.stat-card.success .stat-icon{
+background:#e8f5e9;
+color:var(--success);
+}
+
+.stat-card.warning .stat-icon{
+background:#fff3e0;
+color:var(--warning);
+}
+
+.stat-card.danger .stat-icon{
+background:#fdecea;
+color:var(--danger);
+}
+
+.stat-icon{
+width:56px;
+height:56px;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.4rem;
+margin-right:1rem;
+}
+
+.stat-content h3{
+font-size:0.85rem;
+font-weight:600;
+color:var(--gray-600);
+}
+
+.stat-number{
+font-size:2rem;
+font-weight:800;
+color:var(--gray-800);
+}
+
+/* ========================================
+CARD
+======================================== */
+
+.chart-card,
+.card,
+.form-card{
+background:#ffffff;
+border-radius:16px;
+padding:2rem;
+box-shadow:var(--shadow);
+border:1px solid var(--gray-200);
+margin-bottom:2rem;
+}
+
+/* ========================================
+TABLE
+======================================== */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#ffffff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
+
+th{
+background:var(--primary);
+color:#ffffff;
+padding:14px;
+font-size:13px;
+text-transform:uppercase;
+}
+
+td{
+padding:14px;
+border-bottom:1px solid var(--gray-200);
+font-size:14px;
+}
+
+/* ========================================
+FORM
+======================================== */
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px 14px;
+border:1px solid var(--gray-200);
+border-radius:10px;
+font-size:14px;
+background:#ffffff;
+margin-bottom:1rem;
+}
+
+input:focus,
+select:focus{
+outline:none;
+border-color:var(--primary);
+}
+
+/* ========================================
+BUTTONS
+======================================== */
+
+button,
+.btn{
+height:46px;
+border:none;
+border-radius:10px;
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:8px;
+padding:0 16px;
+transition:0.25s;
+}
+
+button:hover{
+transform:translateY(-1px);
+}
+
+.btn-primary{
+background:var(--primary);
+color:#ffffff;
+}
+
+.btn-success{
+background:var(--success);
+color:#ffffff;
+}
+
+.btn-warning{
+background:var(--warning);
+color:#ffffff;
+}
+
+/* ========================================
+STATUS BADGES
+======================================== */
+
+.status-merah{
+background:#fdecea;
+color:var(--danger);
+padding:6px 14px;
+border-radius:20px;
+font-weight:600;
+}
+
+.status-aman{
+background:#e8f5e9;
+color:var(--success);
+padding:6px 14px;
+border-radius:20px;
+font-weight:600;
+}
+
+/* ========================================
+MODAL
+======================================== */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.5);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.modal-content{
+background:#ffffff;
+padding:2rem;
+border-radius:18px;
+width:min(90vw,500px);
+box-shadow:var(--shadow-lg);
+}
+
+/* gambar produk database */
+
+.img-produk{
+width:50px;
+height:50px;
+object-fit:cover;
+border-radius:6px;
+}
+
+/* ========================================
+RESPONSIVE
+======================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+transform:translateX(-100%);
+}
+
+.main{
+margin-left:0;
+padding:1.5rem;
+}
+
+}
+
+/* ========================================
+TABLE (PROFESIONAL RETAIL)
+======================================== */
+
+.table-container{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#ffffff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:var(--shadow);
+font-size:14px;
+}
+
+thead{
+background:var(--primary);
+}
+
+th{
+padding:14px 12px;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:0.5px;
+color:#ffffff;
+text-align:left;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid var(--gray-200);
+vertical-align:middle;
+}
+
+/* hover row */
+
+tbody tr:hover{
+background:#fafafa;
+}
+
+/* kolom kecil */
+
+th:first-child,
+td:first-child{
+width:40px;
+text-align:center;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+width:60px;
+text-align:center;
+}
+
+/* ========================================
+GAMBAR PRODUK
+======================================== */
+
+.img-produk{
+width:42px;
+height:42px;
+object-fit:cover;
+border-radius:6px;
+border:1px solid #eee;
+display:block;
+margin:auto;
+}
+
+/* ========================================
+BUTTON DALAM TABEL
+======================================== */
+
+td button{
+height:34px;
+padding:0 10px;
+font-size:13px;
+border-radius:8px;
+}
+
+/* ========================================
+HEADER SECTION
+======================================== */
+
+.header-section{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.header-section h1{
+font-size:22px;
+color:var(--primary);
+}
+
+/* ========================================
+ACTION BAR
+======================================== */
+
+.action-bar{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+/* ========================================
+FORM GRID (UNTUK MANAJEMEN)
+======================================== */
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+}
+
+/* ========================================
+SCROLL TABLE
+======================================== */
+
+.table-scroll{
+overflow-x:auto;
+}

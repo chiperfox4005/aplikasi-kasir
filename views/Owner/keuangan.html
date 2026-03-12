@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analisa Keuangan</title>
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/dashboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<div class="sidebar">
+
+<div class="sidebar-header">
+<h2>TOKO SYSTEM</h2>
+</div>
+
+<nav class="sidebar-nav">
+
+<button onclick="location.href='dashboard.html'" class="nav-item">
+<i class="fas fa-chart-line"></i>
+<span>Dashboard</span>
+</button>
+
+<button onclick="location.href='manajemen.html'" class="nav-item">
+<i class="fas fa-box"></i>
+<span>Manajemen Produk</span>
+</button>
+
+<button onclick="location.href='database.html'" class="nav-item">
+<i class="fas fa-database"></i>
+<span>Database</span>
+</button>
+
+<button onclick="location.href='kategori.html'" class="nav-item">
+<i class="fas fa-tags"></i>
+<span>Master Data</span>
+</button>
+
+<button onclick="location.href='keuangan.html'" class="nav-item active">
+<i class="fas fa-chart-pie"></i>
+<span>Keuangan</span>
+</button>
+
+</nav>
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="main">
+
+<div class="card table-container">
+
+<div class="header-section">
+
+<h1>📊 Analisa Keuangan</h1>
+
+</div>
+
+<div style="padding:20px">
+
+<canvas id="grafikPenjualan"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="keuangan.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manajemen Produk - PT System</title>
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/dashboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode/dist/JsBarcode.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<div class="sidebar-header">
+<h2>TOKO SYSTEM</h2>
+</div>
+
+<nav class="sidebar-nav">
+
+<button onclick="location.href='dashboard.html'" class="nav-item">
+<i class="fas fa-chart-line"></i>
+<span>Dashboard</span>
+</button>
+
+<button onclick="location.href='manajemen.html'" class="nav-item active">
+<i class="fas fa-box"></i>
+<span>Manajemen Produk</span>
+</button>
+
+<button onclick="location.href='database.html'" class="nav-item">
+<i class="fas fa-database"></i>
+<span>Database</span>
+</button>
+
+<button onclick="location.href='kategori.html'" class="nav-item">
+<i class="fas fa-tags"></i>
+<span>Kategori</span>
+</button>
+
+<button onclick="location.href='keuangan.html'" class="nav-item">
+<i class="fas fa-chart-pie"></i>
+<span>Keuangan</span>
+</button>
+
+</nav>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<div class="card table-container">
+
+<div class="header-section">
+
+<h1>Manajemen Produk</h1>
+
+<div class="stats-card">
+Total Produk: <span id="totalProduk">0</span>
+</div>
+
+</div>
+
+
+<!-- ACTION BAR -->
+<div class="action-bar">
+
+<button class="btn btn-primary" onclick="generateSelected()">
+🖨️ Generate Barcode
+</button>
+
+<button class="btn btn-danger" onclick="hapusTerpilih()">
+🗑️ Hapus Terpilih
+</button>
+
+</div>
+
+
+<!-- DATA TABLE -->
+<div class="table-scroll">
+
+<table>
+
+<thead>
+<tr>
+<th>#</th>
+<th>Gbr</th>
+<th>ID</th>
+<th>Produk</th>
+<th>Keterangan</th>
+<th>Kategori</th>
+<th>Jenis</th>
+<th>Stok</th>
+<th>Harga</th>
+<th>Status</th>
+<th>Barcode</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="tabelProduk"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BARCODE MODAL -->
+<div id="barcodeForm" class="modal" style="display:none;">
+
+<div class="modal-header">
+<h2>⚙️ Pengaturan Barcode</h2>
+<button onclick="tutupForm()" class="btn-close">✕</button>
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Ukuran Label</label>
+<select id="ukuranLabel">
+<option value="small">Kecil (36×26mm)</option>
+<option value="medium" selected>Sedang (65×38mm)</option>
+<option value="large">Besar (108×58mm)</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Nama Toko</label>
+<input type="text" id="namaToko" value="PT SYSTEM">
+</div>
+
+</div>
+
+<div class="checkbox-grid">
+
+<label class="checkbox-label">
+<input type="checkbox" id="showId" checked> ID Produk
+</label>
+
+<label class="checkbox-label">
+<input type="checkbox" id="showNama" checked> Nama Produk
+</label>
+
+<label class="checkbox-label">
+<input type="checkbox" id="showHarga"> Harga
+</label>
+
+</div>
+
+<div class="modal-actions">
+
+<button onclick="downloadBarcodeFile()" class="btn btn-primary">
+🖨️ Generate PDF
+</button>
+
+<button onclick="tutupForm()" class="btn btn-secondary">
+Batal
+</button>
+
+</div>
+
+</div>
+
+<div id="overlay" class="overlay" style="display:none;"></div>
+
+<script src="manajemen.js" defer></script>
+
+</body>
+</html>

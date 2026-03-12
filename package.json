@@ -1,0 +1,18 @@
+{
+  "name": "aplikasi-kasir",
+  "version": "1.0.0",
+  "description": "Aplikasi Kasir Desktop",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^40.4.1"
+  },
+  "dependencies": {
+    "sqlite3": "^5.0.2"
+  }
+}

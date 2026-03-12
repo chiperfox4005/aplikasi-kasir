@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manajemen Kategori</title>
+
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+<div class="sidebar-header">
+<h2>TOKO SYSTEM</h2>
+</div>
+
+<nav class="sidebar-nav">
+
+<button onclick="location.href='dashboard.html'" class="nav-item">
+<i class="fas fa-chart-line"></i>
+<span>Dashboard</span>
+</button>
+
+<button onclick="location.href='manajemen.html'" class="nav-item">
+<i class="fas fa-box"></i>
+<span>Manajemen Produk</span>
+</button>
+
+<button onclick="location.href='database.html'" class="nav-item">
+<i class="fas fa-database"></i>
+<span>Database</span>
+</button>
+
+<button onclick="location.href='kategori.html'" class="nav-item active">
+<i class="fas fa-tags"></i>
+<span>Kategori</span>
+</button>
+
+<button onclick="location.href='keuangan.html'" class="nav-item">
+<i class="fas fa-chart-pie"></i>
+<span>Keuangan</span>
+</button>
+
+</nav>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="main">
+
+<div class="card table-container">
+
+<div class="header-section">
+<h1>🏷️ Manajemen Kategori Produk</h1>
+</div>
+
+
+<!-- TAMBAH DATA -->
+
+<div class="card">
+
+<h3>Tambah Kategori</h3>
+
+<input id="inputKategori" placeholder="Nama kategori">
+<button onclick="tambahKategori()">Tambah</button>
+
+<br><br>
+
+<h3>Tambah Jenis</h3>
+
+<input id="inputJenis" placeholder="Jenis satuan">
+<button onclick="tambahJenis()">Tambah</button>
+
+</div>
+
+
+<!-- TABEL -->
+
+<div class="card">
+
+<h3>Daftar Kategori</h3>
+
+<table>
+
+<thead>
+<tr>
+<th>Kategori</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="tabelKategori"></tbody>
+
+</table>
+
+
+<br>
+
+
+<h3>Daftar Jenis</h3>
+
+<table>
+
+<thead>
+<tr>
+<th>Jenis</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="tabelJenis"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="kategori.js"></script>
+
+</body>
+</html>
